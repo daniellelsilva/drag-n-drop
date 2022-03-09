@@ -1,6 +1,8 @@
 import React, {useContext, useState } from 'react';
 import TableContext from '../context/TableContext';
 
+import '../styles/table.scss';
+
 export default function Table() {
   const { tableData } = useContext(TableContext);
   const [cellId, setCellId] = useState();
@@ -69,6 +71,7 @@ export default function Table() {
     newCell.innerHTML = cellId;
     newCell2.innerHTML = cellName;
     newCell3.innerHTML = cellNumber;
+
   };
 
   return (
@@ -91,7 +94,7 @@ export default function Table() {
       </table>
 
       <div>
-        <input type="number" onChange={ onChangeId } name="id" />
+        <input type="number" onChange={ onChangeId } id="id" />
         <input type="text" onChange={ onChangeName } name="fullName" />
         <input type="text" onChange={ onChangeNumber } name="number" />
         <button type='button' id="btn" onClick={ addRow }>Add</button>

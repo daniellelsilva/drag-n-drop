@@ -3,6 +3,8 @@ import {useDropzone} from 'react-dropzone';
 
 import TableContext from '../context/TableContext';
 
+import '../styles/dragNDrop.scss';
+
 export default function MyDropzone() {
   const { setTableData } = useContext(TableContext);
 
@@ -24,9 +26,9 @@ export default function MyDropzone() {
   const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (
-    <div {...getRootProps()}>
+    <div {...getRootProps()} className="drop">
       <input {...getInputProps()} />
-      <p>Drag 'n' drop some files here, or click to select files</p>
+      <p>Choose a CSV file</p>
     </div>
   )
 }

@@ -1,7 +1,7 @@
-import './App.css';
+import './App.scss';
 import TableProvider from './context/TableProvider';
-import DragNDrop from './pages/DragNDrop';
-import Table from './pages/Table';
+import DragNDrop from './components/DragNDrop';
+import Table from './components/Table';
 
 function App() {
   return (
