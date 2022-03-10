@@ -1,13 +1,22 @@
-import React, {useContext, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
+import { Icon } from '@iconify/react';
 import TableContext from '../context/TableContext';
 
 import '../styles/table.scss';
+import '../styles/components/buttons.scss';
 
 export default function Table() {
-  const { tableData } = useContext(TableContext);
-  const [cellId, setCellId] = useState();
-  const [cellName, setCellName] = useState();
-  const [cellNumber, setCellNumber] = useState();
+  const { tableData, setTableData } = useContext(TableContext);
+  const [cellData, setCellData] = useState({id: '', fullName: '', number: '' });
+  const [tableRows, setTableRows] = useState();
+
+  let rows = [];
+
+  useEffect(() => {
+    return () => {
+      setTableRows(rows);
+    }
+  }, [])
 
   const deleteItem = (e) => {
     console.log(e.target.id)
@@ -20,15 +29,25 @@ export default function Table() {
   const createLines = () => {
     const tableContent = tableData.result;
 
-    const rows = tableContent.split('\n').map((row) => (row.split(',')).map((info) => (info)));
+    const tableString = tableContent.split('\n');
+
+
+    rows = tableString.map((row) => (row.split(',')).map((info) => (info)));
     delete rows[rows.length - 1];
+    // setTableRows(rows);
+    console.log(rows);
+    console.log(tableRows)
 
     const cells = rows.map((info, index) => (
-      <tr key={index} id={index}>
-        <td>{info[0]}</td>
+      <tr className="table-columns" key={index} id={index}>
+        <td className='vv'>{info[0]}</td>
         <td>{info[1]}</td>
         <td>{info[2]}</td>
-        <td><button id={index} onClick={(e) => deleteItem(e)}>excluir</button></td>
+        <td className="table-delete">
+          <button className="round-btn" id={index} onClick={(e) => deleteItem(e)}>
+            <Icon icon="clarity:trash-line" className="table-icon" />
+          </button>
+        </td>
       </tr>
     ));
 
@@ -36,54 +55,61 @@ export default function Table() {
     
   };
 
-  const onChangeId = ({target}) => {
-    const { value } = target;
-    setCellId(value);
-  };
-
-  const onChangeName = ({target}) => {
-    const { value } = target;
-    setCellName(value);
-  };
-
-  const onChangeNumber = ({target}) => {
-    const { value } = target;
-    setCellNumber(value);
-  };
+  const onChange = ({target}) => {
+    const {name} = target;
+    const {value} = target;
+    setCellData({...cellData, [name]: value,})
+  }
 
   const addRow = () => {
-    let table = document.getElementById('table');
-    const newRow = table.insertRow(-1);
-    let newCell = newRow.insertCell(0);
-    let newCell2 = newRow.insertCell(1);
-    let newCell3 = newRow.insertCell(2);
-    let newCell4 = newRow.insertCell(3);
+    const tableContent = tableData.result;
+    console.log(rows)
+    console.log(tableRows)
+    const cells = Object.values(cellData);
 
-    var tr = document.querySelectorAll('tr');
+    // setSelectColumns((prevState) => {
+    //   const newState = prevState.filter((select) => select !== column);
+    //   setColumn(newState[0]);
+    //   return newState;
+    // });
 
-    var button = document.createElement("button")
-    button.id = tr.length - 1;
-    button.innerHTML = "excluir";
-    button.onclick = ((e) => deleteItem(e));
-    newCell4.appendChild(button);
+    // setTableData(rows.push(cells))
 
-    newRow.id = tr.length - 1;
-    newCell.innerHTML = cellId;
-    newCell2.innerHTML = cellName;
-    newCell3.innerHTML = cellNumber;
+    // setTableData([...tableData, cellId, cellName, cellNumber])
+
+
+    // let table = document.getElementById('table');
+    // const newRow = table.insertRow(-1);
+    // let newCell = newRow.insertCell(0);
+    // let newCell2 = newRow.insertCell(1);
+    // let newCell3 = newRow.insertCell(2);
+    // let newCell4 = newRow.insertCell(3);
+
+    // var tr = document.querySelectorAll('tr');
+
+    // var button = document.createElement("button")
+    // button.id = tr.length - 1;
+    // button.className = "delete-btn"
+    // button.innerHTML = "<span class='iconify teste' data-icon='clarity:trash-line'></span>"
+    // button.onclick = ((e) => deleteItem(e));
+    // newCell4.appendChild(button);
+
+    // newRow.id = tr.length - 1;
+    // newCell.innerHTML = cellId;
+    // newCell2.innerHTML = cellName;
+    // newCell3.innerHTML = cellNumber;
 
   };
 
   return (
-    <div>
-      Table  
-
-      <table >
+    <div className="table-section">
+      <table className="table">
         <thead>
-          <tr>
+          <tr className="table-header">
             <th>ID</th>
             <th>Name</th>
             <th>Phone</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="table">
@@ -93,11 +119,13 @@ export default function Table() {
         </tbody>
       </table>
 
-      <div>
-        <input type="number" onChange={ onChangeId } id="id" />
-        <input type="text" onChange={ onChangeName } name="fullName" />
-        <input type="text" onChange={ onChangeNumber } name="number" />
-        <button type='button' id="btn" onClick={ addRow }>Add</button>
+      <div className="table-inputs">
+        <input className="table-input" type="number" onChange={ onChange } name="id" />
+        <input className="table-input" type="text" onChange={ onChange } name="fullName" />
+        <input className="table-input" type="text" onChange={ onChange } name="number" />
+        <button className="round-btn table-add-btn" type='button' id="btn" onClick={ addRow }>
+          <Icon className="table-icon" icon="fluent:text-bullet-list-add-24-regular" />
+        </button>
       </div>
 
     </div>

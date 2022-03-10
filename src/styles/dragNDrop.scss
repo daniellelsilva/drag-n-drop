@@ -2,11 +2,26 @@
 
 .drop {
   background-image: linear-gradient(to right top, $color-primary, $color-secondary );
-  padding: 10%;
+  border-radius: 3px;
+  box-shadow: 0 .5rem 2rem rgba($color-black, .2);
+  cursor: pointer;
+  padding: 5% 10%;
   margin: auto;
   width: 50%;
 
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &-icon {
+    color: $color-gray;
+    font-size: 3rem;
+    margin-bottom: 2%;
+  }
+
+  &-paragraph {
+    color: $color-gray;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
 }

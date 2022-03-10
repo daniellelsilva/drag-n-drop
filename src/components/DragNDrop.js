@@ -1,5 +1,6 @@
 import React, {useCallback, useContext} from 'react';
 import {useDropzone} from 'react-dropzone';
+import { Icon } from '@iconify/react';
 
 import TableContext from '../context/TableContext';
 
@@ -28,7 +29,8 @@ export default function MyDropzone() {
   return (
     <div {...getRootProps()} className="drop">
       <input {...getInputProps()} />
-      <p>Choose a CSV file</p>
+      <Icon icon="bi:download" className="drop-icon" />
+      <p className="drop-paragraph">Drop a CSV file</p>
     </div>
   )
 }
