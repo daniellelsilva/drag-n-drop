@@ -45,7 +45,8 @@ export default function Table() {
         <td>{info[2]}</td>
         <td className="table-delete">
           <button className="round-btn" id={index} onClick={(e) => deleteItem(e)}>
-            <Icon icon="clarity:trash-line" className="table-icon" />
+            <Icon icon="bytesize:trash" className="table-icon" id="delete-icon" />
+           
           </button>
         </td>
       </tr>
@@ -120,11 +121,18 @@ export default function Table() {
       </table>
 
       <div className="table-inputs">
-        <input className="table-input" type="number" onChange={ onChange } name="id" />
-        <input className="table-input" type="text" onChange={ onChange } name="fullName" />
-        <input className="table-input" type="text" onChange={ onChange } name="number" />
-        <button className="round-btn table-add-btn" type='button' id="btn" onClick={ addRow }>
-          <Icon className="table-icon" icon="fluent:text-bullet-list-add-24-regular" />
+        <input className="table-input" type="number" onChange={ onChange } name="id" placeholder="ID" />
+        <input className="table-input" type="text" onChange={ onChange } name="fullName" placeholder="Full name" />
+        <input className="table-input" type="text" onChange={ onChange } name="number" placeholder="Phone" />
+        <button
+          className="round-btn table-add-btn"
+          type='button'
+          id="btn"
+          // disabled={}
+          onClick={ addRow }
+        >
+          <Icon className="table-icon add-btn" icon="fluent:add-16-filled" />
+          {/* <Icon  icon="fluent:text-bullet-list-add-24-regular" /> */}
         </button>
       </div>
 

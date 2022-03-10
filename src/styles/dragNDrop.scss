@@ -3,15 +3,21 @@
 .drop {
   background-image: linear-gradient(to right top, $color-primary, $color-secondary );
   border-radius: 3px;
+  border: 5px dashed transparent;
   box-shadow: 0 .5rem 2rem rgba($color-black, .2);
   cursor: pointer;
   padding: 5% 10%;
   margin: auto;
+  transition: all .3s;
   width: 50%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover {
+    border: 5px dashed $color-primary-dark;
+  }
 
   &-icon {
     color: $color-gray;

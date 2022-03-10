@@ -3,15 +3,18 @@
 .round-btn {
   height: 3.5rem;
   width: 3.5rem;
+  
   border: none;
   border-radius: 50%;
   box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+  color: $color-gray-dark-1;
   cursor: pointer;
 
   transition: all .4s;
 
   &:hover {
     transform: translateY(-3px);
-    color: rgb(157, 2, 8);
+    background-color: rgb(157, 2, 8);
+    color: $color-white !important;
   }
 }
