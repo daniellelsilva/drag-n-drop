@@ -8,52 +8,29 @@ import '../styles/components/buttons.scss';
 export default function Table() {
   const { tableData, setTableData } = useContext(TableContext);
   const [cellData, setCellData] = useState({id: '', fullName: '', number: '' });
-  const [tableRows, setTableRows] = useState();
 
-  let rows = [];
-
-  useEffect(() => {
-    return () => {
-      setTableRows(rows);
-    }
-  }, [])
-
-  const deleteItem = (e) => {
-    console.log(e.target.id)
- 
+  const deleteItem = (e) => { 
     let id = e.target.id
     let deleteRow = document.getElementById(id).remove();
     return deleteRow;
   };
 
   const createLines = () => {
-    const tableContent = tableData.result;
-
-    const tableString = tableContent.split('\n');
-
-
-    rows = tableString.map((row) => (row.split(',')).map((info) => (info)));
-    delete rows[rows.length - 1];
-    // setTableRows(rows);
-    console.log(rows);
-    console.log(tableRows)
-
-    const cells = rows.map((info, index) => (
+      const cells = tableData.map((info, index) => (
       <tr className="table-columns" key={index} id={index}>
-        <td className='vv'>{info[0]}</td>
+        <td>{info[0]}</td>
         <td>{info[1]}</td>
         <td>{info[2]}</td>
         <td className="table-delete">
           <button className="round-btn" id={index} onClick={(e) => deleteItem(e)}>
-            <Icon icon="bytesize:trash" className="table-icon" id="delete-icon" />
-           
+            <Icon icon="bytesize:trash" className="table-icon" id={index} />
+             
           </button>
         </td>
       </tr>
     ));
-
+  
     return cells;
-    
   };
 
   const onChange = ({target}) => {
@@ -63,43 +40,12 @@ export default function Table() {
   }
 
   const addRow = () => {
-    const tableContent = tableData.result;
-    console.log(rows)
-    console.log(tableRows)
     const cells = Object.values(cellData);
 
-    // setSelectColumns((prevState) => {
-    //   const newState = prevState.filter((select) => select !== column);
-    //   setColumn(newState[0]);
-    //   return newState;
-    // });
-
-    // setTableData(rows.push(cells))
-
-    // setTableData([...tableData, cellId, cellName, cellNumber])
-
-
-    // let table = document.getElementById('table');
-    // const newRow = table.insertRow(-1);
-    // let newCell = newRow.insertCell(0);
-    // let newCell2 = newRow.insertCell(1);
-    // let newCell3 = newRow.insertCell(2);
-    // let newCell4 = newRow.insertCell(3);
-
-    // var tr = document.querySelectorAll('tr');
-
-    // var button = document.createElement("button")
-    // button.id = tr.length - 1;
-    // button.className = "delete-btn"
-    // button.innerHTML = "<span class='iconify teste' data-icon='clarity:trash-line'></span>"
-    // button.onclick = ((e) => deleteItem(e));
-    // newCell4.appendChild(button);
-
-    // newRow.id = tr.length - 1;
-    // newCell.innerHTML = cellId;
-    // newCell2.innerHTML = cellName;
-    // newCell3.innerHTML = cellNumber;
-
+    setTableData((prevState) => {
+      const newRow = cells;
+      return [...prevState, newRow]
+    })
   };
 
   return (
@@ -114,7 +60,7 @@ export default function Table() {
           </tr>
         </thead>
         <tbody id="table">
-        {tableData.result !== undefined && (
+        {tableData !== undefined && (
               createLines()
             )}
         </tbody>
@@ -128,11 +74,9 @@ export default function Table() {
           className="round-btn table-add-btn"
           type='button'
           id="btn"
-          // disabled={}
           onClick={ addRow }
         >
           <Icon className="table-icon add-btn" icon="fluent:add-16-filled" />
-          {/* <Icon  icon="fluent:text-bullet-list-add-24-regular" /> */}
         </button>
       </div>
 

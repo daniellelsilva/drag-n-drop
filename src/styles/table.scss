@@ -10,6 +10,7 @@
 }
 
 .table {
+  background-color: $color-white;
   border-radius: 3px;
   margin: auto;
   margin-top: 8%;
@@ -29,7 +30,6 @@
 
   &-columns td {
     color: $color-gray-dark-1;
-    // border-top: 1px solid $color-secondary;
     font-size: 1.5rem;
     font-weight: 300;
     padding: .9rem;
@@ -39,9 +39,6 @@
     background-color: $color-secondary-light;
   }
 
-  // td:nth-child(4) {
-  //   background-color: rgb(243, 243, 243)
-  // }
   &-inputs {
     margin-top: 8%;
     display: flex;
@@ -52,16 +49,16 @@
 
   &-input {
     border: 1px solid $color-primary;
-    border-radius: 3px;
+    border-radius: 2.5rem;
     box-shadow: 0 .4rem 1rem rgba($color-black, .2);
     color: $color-gray-dark-1;
     font-family: $default-font-family;
     height: 5rem;
-    margin: 2% .5% 0 .5%;
+    margin: 3px;
     padding: 2%;
 
     &:first-child {
-      width: 10% !important;
+      width: 14% !important;
     }
 
     &:not(:first-child) {
@@ -79,12 +76,15 @@
   }
 
   &-add-btn {
+    background-color: $color-white !important;
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     color: rgb(88, 129, 87) !important;
-    margin: 2.5%;
+    margin: .6% 3px;
     position: relative;
 
     &:hover {
       background-color: rgb(88, 129, 87) !important;
+      box-shadow: 0 1rem 2em rgba($color-black, .2);
     }
   }
 

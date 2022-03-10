@@ -1,18 +1,20 @@
 @import '../abstracts/variables.scss';
 
 .round-btn {
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 4rem;
+  width: 4rem;
   
+  background-color: transparent;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+  
   color: $color-gray-dark-1;
   cursor: pointer;
 
   transition: all .4s;
 
   &:hover {
+    box-shadow: 0 1rem 2em rgba($color-black, .2);
     transform: translateY(-3px);
     background-color: rgb(157, 2, 8);
     color: $color-white !important;
