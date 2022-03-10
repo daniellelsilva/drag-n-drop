@@ -1,7 +1,10 @@
 @import './abstracts/variables.scss';
 
 .drop {
-  background-image: linear-gradient(to right top, $color-primary, $color-secondary );
+  // background-image: linear-gradient(to right top, $color-primary, $color-secondary );
+  background-color: rgba(51,51,51, 0.15);
+  box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
+  backdrop-filter: blur(8px);
   border-radius: 3px;
   border: 5px dashed transparent;
   // box-shadow: 0 .5rem 2rem rgba($color-black, .2);
