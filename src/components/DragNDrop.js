@@ -30,7 +30,7 @@ export default function MyDropzone() {
     })
     
   }, [])
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+  const {getRootProps, getInputProps} = useDropzone({onDrop, accept: '.csv'})
 
   return (
     <div {...getRootProps()} className="drop">
