@@ -39,7 +39,7 @@
     font-size: $default-font-size;
     font-weight: 400;
     text-transform: uppercase;
-    width: 1%;
+    width:1%;
     padding: 2.5%;
 
     @include respond(tab-port) {
@@ -50,7 +50,7 @@
       width: 3%;
       padding: 0 6%;
     }
-
+    
     &:nth-child(2) {
       width: 10%;
     }

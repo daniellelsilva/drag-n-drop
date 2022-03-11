@@ -93,7 +93,6 @@ export default function Table() {
         <button
           className="round-btn table-input-btn"
           type='button'
-          // disabled={Object.values(cellData).length !== 3}
           onClick={ addRow }
         >
           <Icon className="table-input-icon add-btn" icon="fluent:add-16-filled" />
