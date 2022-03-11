@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/drag-n-drop/static/css/main.92fcc06e.css",
+    "main.js": "/drag-n-drop/static/js/main.87bdf1cd.js",
+    "static/js/787.a14325a1.chunk.js": "/drag-n-drop/static/js/787.a14325a1.chunk.js",
+    "static/media/DANI-BG-7.jpg": "/drag-n-drop/static/media/DANI-BG-7.4ee7be8aa17c263684e1.jpg",
+    "static/media/LOGO LARANJA.svg": "/drag-n-drop/static/media/LOGO LARANJA.4aa4ba93fb15ee11f49f17c054148960.svg",
+    "index.html": "/drag-n-drop/index.html",
+    "main.92fcc06e.css.map": "/drag-n-drop/static/css/main.92fcc06e.css.map",
+    "main.87bdf1cd.js.map": "/drag-n-drop/static/js/main.87bdf1cd.js.map",
+    "787.a14325a1.chunk.js.map": "/drag-n-drop/static/js/787.a14325a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92fcc06e.css",
+    "static/js/main.87bdf1cd.js"
+  ]
+}
