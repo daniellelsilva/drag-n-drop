@@ -10,7 +10,7 @@
 }
 
 .table {
-  background-color: $color-white;
+  background-color: $color-primary-light;
   border-radius: 3px;
   margin: auto;
   margin-top: 8%;
@@ -50,11 +50,14 @@
   }
 
   &-input {
+    background-color: $color-primary-light;
+    backdrop-filter: blur(20px);
     border: 1px solid $color-primary;
     border-radius: 2.5rem;
     box-shadow: 0 .4rem 1rem rgba($color-black, .2);
-    color: $color-gray-dark-1;
+    color: $color-secondary-dark;
     font-family: $default-font-family;
+    font-size: $default-font-size;
     height: 5rem;
     margin: 3px;
     padding: 2%;
@@ -73,19 +76,19 @@
     }
 
     &::placeholder {
-      color: $color-gray-light-1;
+      color: $color-secondary;
     }
   }
 
   &-add-btn {
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
-    color: rgb(88, 129, 87) !important;
+    color: $color-secondary-dark !important;
     margin: .6% 3px;
     position: relative;
     transition: all .6s;
 
     &:hover {
-      background-color: rgb(88, 129, 87) !important;
+      background-color: $color-secondary-dark !important;
       box-shadow: 0 1rem 2em rgba($color-black, .2);
     }
   }

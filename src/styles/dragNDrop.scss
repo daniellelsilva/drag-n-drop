@@ -4,10 +4,9 @@
   // background-image: linear-gradient(to right top, $color-primary, $color-secondary );
   background-color: rgba(253, 253, 253, 0.15);
   box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   border-radius: 3px;
   border: 5px dashed transparent;
-  // box-shadow: 0 .5rem 2rem rgba($color-black, .2);
   cursor: pointer;
   color: $color-primary;
   padding: 5% 10%;

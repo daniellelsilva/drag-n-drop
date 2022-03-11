@@ -1,17 +1,16 @@
 @import './abstracts/variables.scss';
 
 .header {
-  background-color: rgba(250, 245, 245, 0.15);
-  box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
-  backdrop-filter: blur(8px);
+  background-color: transparent;
   height: 8vh;
+  margin: auto;
   margin-bottom: 4%;
+  width: 50%;
 
   display: flex;
   align-items: center;
 
   &-logo {
-    margin-left: 3%;
-    width: 10%;
+    width: 15%;
   }
 }
