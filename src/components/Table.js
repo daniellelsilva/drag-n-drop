@@ -23,7 +23,7 @@ export default function Table() {
         <td>{info[2]}</td>
         <td className="table-delete">
           <button className="round-btn" id={index} onClick={(e) => deleteItem(e)}>
-            <Icon icon="bytesize:trash" className="table-icon" id={index} />
+            <Icon icon="bytesize:trash" className="table-input-icon delete-icon" id={index} />
              
           </button>
         </td>
