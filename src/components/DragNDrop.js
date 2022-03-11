@@ -6,11 +6,14 @@ import TableContext from '../context/TableContext';
 
 import '../styles/dragNDrop.scss';
 
+const formats_files = ['txt', 'csv']
+
 export default function MyDropzone() {
   const { setTableData } = useContext(TableContext);
 
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
+      if(!formats_files.includes(file.path.split('.', 2)[1])) return alert('Arquivo inválido!');
       const reader = new FileReader()
 
       reader.onabort = () => console.log('file reading was aborted')
