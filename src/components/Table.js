@@ -7,7 +7,7 @@ import '../styles/components/buttons.scss';
 
 export default function Table() {
   const { tableData, setTableData } = useContext(TableContext);
-  const [cellData, setCellData] = useState({id: '', fullName: '', number: '' });
+  const [cellData, setCellData] = useState({});
 
   const deleteItem = (e) => { 
     let id = e.target.id
@@ -16,6 +16,7 @@ export default function Table() {
   };
 
   const createLines = () => {
+      console.log(Object.values(cellData).length)
       const cells = tableData.map((info, index) => (
       <tr className="table-columns" key={index} id={index}>
         <td>{info[0]}</td>
@@ -24,12 +25,10 @@ export default function Table() {
         <td className="table-delete">
           <button className="round-btn" id={index} onClick={(e) => deleteItem(e)}>
             <Icon icon="bytesize:trash" className="table-input-icon delete-icon" id={index} />
-             
           </button>
         </td>
       </tr>
     ));
-  
     return cells;
   };
 
@@ -73,6 +72,7 @@ export default function Table() {
           onChange={ onChange }
           name="id"
           placeholder="ID"
+          required
         />
         <input
           className="table-input-all table-input-all-2"
@@ -80,6 +80,7 @@ export default function Table() {
           onChange={ onChange }
           name="fullName"
           placeholder="Full name"
+          required
         />
         <input
           className="table-input-all table-input-all-3"
@@ -87,10 +88,12 @@ export default function Table() {
           onChange={ onChange }
           name="number"
           placeholder="Phone"
+          required
         />
         <button
           className="round-btn table-input-btn"
           type='button'
+          // disabled={Object.values(cellData).length !== 3}
           onClick={ addRow }
         >
           <Icon className="table-input-icon add-btn" icon="fluent:add-16-filled" />

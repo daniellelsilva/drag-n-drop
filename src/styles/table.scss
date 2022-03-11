@@ -24,10 +24,10 @@
 
 .table {
   background-color: $color-primary-light;
-  border-radius: 3px;
+  border-radius: 2.5rem;
   margin: auto;
   margin-top: 8%;
-  padding: 1%;
+  padding: 2%;
   text-align: left;
   width: 100%;
   box-shadow: 0 .5rem 2rem rgba($color-black, .2);
@@ -87,6 +87,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 2%;
     width: 100%;
 
 
@@ -139,6 +140,15 @@
       &:hover {
         background-color: $color-secondary-dark !important;
         box-shadow: 0 1rem 2em rgba($color-black, .2);
+      }
+
+      &:disabled {
+        color: $color-gray-light-1 !important;
+
+        &:hover {
+          background-color: $color-gray-light-1 !important;
+          box-shadow: 0 1rem 2em rgba($color-black, .2);
+        }
       }
     }
   

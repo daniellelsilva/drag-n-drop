@@ -17,15 +17,14 @@ export default function MyDropzone() {
       reader.onerror = () => console.log('file reading has failed')
       reader.onload = () => {
       
-        const result = reader.result
+        const result = reader.result;
 
         const tableString = result.split('\n');
 
         const rows = tableString.map((row) => (row.split(',')));
         // delete rows[rows.length - 1];
-        rows.pop()
-        console.log(rows)
-        setTableData(rows)
+        rows.pop();
+        setTableData(rows);
       }
       reader.readAsText(file)
     })
