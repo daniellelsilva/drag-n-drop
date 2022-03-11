@@ -24,5 +24,7 @@ O objetivo do projeto foi criar uma página onde fosse possível carregar um arq
   <img src="./src/toReadMe/gif3.gif">
 </p>
 
+Para acessar a página no gitHub Pages, acesse: https://daniellelsilva.github.io/drag-n-drop/
+
 
 - Node v14.17.5
