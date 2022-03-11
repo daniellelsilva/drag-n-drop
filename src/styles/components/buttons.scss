@@ -4,6 +4,7 @@
   height: 4rem;
   width: 4rem;
   
+  background-color: $color-grey-light-2;
   box-shadow: 0 .5rem 1rem rgba($color-black, .2);
   border: none;
   border-radius: 50%;
@@ -11,12 +12,12 @@
   color: $color-gray-dark-1;
   cursor: pointer;
 
-  transition: all .4s;
+  transition: all .6s;
 
   &:hover {
     box-shadow: 0 1rem 2em rgba($color-black, .2);
     transform: translateY(-3px);
-    background-color: rgb(157, 2, 8);
+    background-color: $color-primary-dark;
     color: $color-white !important;
   }
 }

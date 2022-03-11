@@ -50,7 +50,7 @@ export default function Table() {
 
   return (
     <div className="table-section">
-      <table className="table">
+      <table className="table" cellspacing="0">
         <thead>
           <tr className="table-header">
             <th>ID</th>
