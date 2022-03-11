@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../styles/LOGO LARANJA.svg'
+import logo from '../styles/images/LOGO LARANJA.svg';
 
 import '../styles/header.scss';
 import '../styles/components/buttons.scss';
