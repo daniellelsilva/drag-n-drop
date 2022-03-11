@@ -37,6 +37,9 @@
     width: 85%;
   }
 
+  @include respond(phone) {
+    width: 90%;
+  }
   
 
   &-icon {
@@ -51,6 +54,8 @@
     @include respond(tab-land) {
       font-size: 4rem;
     }
+
+    
   }
 
   &-paragraph {

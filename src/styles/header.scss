@@ -15,8 +15,12 @@
     width: 70%;
   }
 
-  @include respond(tab-land) {
+  @include respond(tab-port) {
     width: 85%;
+  }
+
+  @include respond(phone) {
+    width: 90%;
   }
 
   &-logo {
@@ -24,6 +28,11 @@
 
     @include respond(tab-land) {
       width: 13%;
+    }
+
+    @include respond(phone) {
+      margin: auto;
+      width: 20%;
     }
   }
 }

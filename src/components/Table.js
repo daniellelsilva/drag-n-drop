@@ -66,16 +66,34 @@ export default function Table() {
         </tbody>
       </table>
 
-      <div className="table-inputs">
-        <input className="table-input" type="number" onChange={ onChange } name="id" placeholder="ID" />
-        <input className="table-input" type="text" onChange={ onChange } name="fullName" placeholder="Full name" />
-        <input className="table-input" type="text" onChange={ onChange } name="number" placeholder="Phone" />
+      <div className="table-input">
+        <input
+          className="table-input-all table-input-all-1"
+          type="number"
+          onChange={ onChange }
+          name="id"
+          placeholder="ID"
+        />
+        <input
+          className="table-input-all table-input-all-2"
+          type="text"
+          onChange={ onChange }
+          name="fullName"
+          placeholder="Full name"
+        />
+        <input
+          className="table-input-all table-input-all-3"
+          type="text"
+          onChange={ onChange }
+          name="number"
+          placeholder="Phone"
+        />
         <button
-          className="round-btn table-add-btn"
+          className="round-btn table-input-btn"
           type='button'
           onClick={ addRow }
         >
-          <Icon className="table-icon add-btn" icon="fluent:add-16-filled" />
+          <Icon className="table-input-icon add-btn" icon="fluent:add-16-filled" />
         </button>
       </div>
 

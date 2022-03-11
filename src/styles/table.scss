@@ -16,6 +16,10 @@
   @include respond(tab-port) {
     width: 85%;
   }
+
+  @include respond(phone) {
+    width: 90%;
+  }
 }
 
 .table {
@@ -77,70 +81,71 @@
     background-color: $color-secondary-light;
   }
 
-  &-inputs {
+  &-input {
     margin: 6% 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
 
-  &-input {
-    background-color: $color-primary-light;
-    backdrop-filter: blur(20px);
-    border: 1px solid $color-primary;
-    border-radius: 2.5rem;
-    box-shadow: 0 .4rem 1rem rgba($color-black, .2);
-    color: $color-secondary-dark;
-    font-family: $default-font-family;
-    font-size: $default-font-size;
-    height: 5rem;
-    margin: 1px;
-    padding: 2%;
 
-    @include respond(tab-port) {
-      font-size: 1.7rem;
-    }
-
-    &:first-child {
-      width: 14% !important;
-    }
-
-    &:not(:first-child) {
-      width: 40%;
-    }
-
-    &:focus {
-      border: 2px solid $color-primary;
-      outline: none;
-    }
-
-    &::placeholder {
-      color: $color-secondary;
-
+    &-all {
+      background-color: $color-primary-light;
+      backdrop-filter: blur(20px);
+      border: 1px solid $color-primary;
+      border-radius: 2.5rem;
+      box-shadow: 0 .4rem 1rem rgba($color-black, .2);
+      color: $color-secondary-dark;
+      font-family: $default-font-family;
+      font-size: $default-font-size;
+      height: 5rem;
+      margin: 1px;
+      padding: 2%;
+  
       @include respond(tab-port) {
-        color: $color-primary;
+        font-size: 1.7rem;
+      }
+  
+      &-1 {
+        width: 14%;
+      }
+  
+      &-2, &-3 {
+        width: 40%;
+      }
+  
+      &:focus {
+        border: 2px solid $color-primary;
+        outline: none;
+      }
+  
+      &::placeholder {
+        color: $color-secondary;
+  
+        @include respond(tab-port) {
+          color: $color-primary;
+        }
       }
     }
-  }
-
-  &-add-btn {
-    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
-    color: $color-secondary-dark !important;
-    margin: 0 2.5% 0 3px;
-    position: relative;
-    transition: all .6s;
-
-    &:hover {
-      background-color: $color-secondary-dark !important;
-      box-shadow: 0 1rem 2em rgba($color-black, .2);
+  
+    &-btn {
+      box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+      color: $color-secondary-dark !important;
+      margin: 0 2.5% 0 3px;
+      position: relative;
+      transition: all .6s;
+  
+      &:hover {
+        background-color: $color-secondary-dark !important;
+        box-shadow: 0 1rem 2em rgba($color-black, .2);
+      }
     }
-  }
-
-  &-icon {
-    font-size: 2rem;
-  }
+  
+    &-icon {
+      font-size: 2rem;
+    } 
+  }  
 }
 
 .add-btn {
@@ -148,4 +153,45 @@
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+@include respond(phone) {
+  .table-input {
+    flex-direction: column;
+
+    &-all {
+
+      font-size: 1.8rem;
+      height: 5rem;
+      margin: 2%;
+      padding: 4%;
+  
+      &-1, &-2, &-3 {
+        width: 100%;
+      }
+  
+      &::placeholder {
+        color: $color-primary;
+      }
+    }
+  
+    &-btn {
+      box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+      color: $color-secondary-dark !important;
+      margin-top: 3%;
+      position: relative;
+      transition: all .6s;
+  
+      &:hover {
+        background-color: $color-secondary-dark !important;
+        box-shadow: 0 1rem 2em rgba($color-black, .2);
+      }
+    }
+  
+    &-icon {
+      font-size: 3rem;
+    }
+    
+  }
 }
