@@ -73,7 +73,6 @@ export default function Table() {
         <button
           className="round-btn table-add-btn"
           type='button'
-          id="btn"
           onClick={ addRow }
         >
           <Icon className="table-icon add-btn" icon="fluent:add-16-filled" />

@@ -1,10 +1,12 @@
 @import './abstracts/variables.scss';
+@import './abstracts/mixins.scss';
 
 .drop {
   // background-image: linear-gradient(to right top, $color-primary, $color-secondary );
   background-color: rgba(253, 253, 253, 0.15);
-  box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
   backdrop-filter: blur(20px);
+  box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
+
   border-radius: 3px;
   border: 5px dashed transparent;
   cursor: pointer;
@@ -18,6 +20,12 @@
   flex-direction: column;
   align-items: center;
 
+  @include respond(tab-land) {
+    border: 5px dashed $color-primary;
+    color: $color-primary-dark;
+    width: 70%;
+  }
+
   &:hover {
     border: 5px dashed $color-primary-dark;
     color: $color-primary-dark;
@@ -27,11 +35,19 @@
     color: inherit;
     font-size: 3rem;
     margin-bottom: 2%;
+
+    @include respond(tab-land) {
+      font-size: 3.5rem;
+    }
   }
 
   &-paragraph {
     color: inherit;
     font-size: 1.4rem;
     text-transform: uppercase;
+
+    @include respond(tab-land) {
+      font-size: 1.5rem;
+    }
   }
 }
