@@ -15,7 +15,7 @@
   margin: auto;
   margin-top: 8%;
   padding: 1%;
-  text-align: center;
+  text-align: left;
   width: 100%;
   box-shadow: 0 .5rem 2rem rgba($color-black, .2);
 
@@ -26,6 +26,21 @@
     font-size: $default-font-size;
     font-weight: 400;
     text-transform: uppercase;
+    width: 1%;
+    padding: 2.5%;
+
+    &:not(:last-child) {
+      width: 3%;
+      padding: 0 6%;
+    }
+
+    &:nth-child(2) {
+      width: 10%;
+    }
+
+    &:nth-child(3) {
+      width: 9%;
+    }
   }
 
   &-columns td {
@@ -33,7 +48,12 @@
     border: 0;
     font-size: 1.5rem;
     font-weight: 300;
-    padding: .9rem;
+    padding: 1%;
+
+    &:not(:last-child) {
+      width: 7%;
+      padding: 0 6%;
+    }
   }
 
   tr:nth-child(even) {
@@ -59,7 +79,7 @@
     font-family: $default-font-family;
     font-size: $default-font-size;
     height: 5rem;
-    margin: 3px;
+    margin: 1px;
     padding: 2%;
 
     &:first-child {
@@ -83,7 +103,7 @@
   &-add-btn {
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     color: $color-secondary-dark !important;
-    margin: .6% 3px;
+    margin: 0 2.5% 0 3px;
     position: relative;
     transition: all .6s;
 
