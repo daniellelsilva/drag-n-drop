@@ -20,16 +20,24 @@
   flex-direction: column;
   align-items: center;
 
+  &:hover {
+      border: 5px dashed $color-primary-dark;
+      color: $color-primary-dark;
+    }
+    
   @include respond(tab-land) {
-    border: 5px dashed $color-primary;
+    border-color: $color-primary;
     color: $color-primary-dark;
     width: 70%;
   }
 
-  &:hover {
-    border: 5px dashed $color-primary-dark;
+  @include respond(tab-port) {
+    border: 3px dashed $color-primary !important;
     color: $color-primary-dark;
+    width: 85%;
   }
+
+  
 
   &-icon {
     color: inherit;
@@ -38,6 +46,10 @@
 
     @include respond(tab-land) {
       font-size: 3.5rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 4rem;
     }
   }
 
@@ -48,6 +60,10 @@
 
     @include respond(tab-land) {
       font-size: 1.5rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 1.7rem;
     }
   }
 }
