@@ -2,7 +2,6 @@
 @import './abstracts/mixins.scss';
 
 .drop {
-  // background-image: linear-gradient(to right top, $color-primary, $color-secondary );
   background-color: rgba(253, 253, 253, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 3px 2ps 7px rgba (17, 17, 17, 0.55);
